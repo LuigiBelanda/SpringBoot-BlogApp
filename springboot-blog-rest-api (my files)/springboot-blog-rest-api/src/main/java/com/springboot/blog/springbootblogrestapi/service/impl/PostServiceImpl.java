@@ -9,6 +9,7 @@ import com.springboot.blog.springbootblogrestapi.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,8 +38,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public PostResponse getAllPosts(int pageNo, int pageSize) {
-        Page<Post> posts = postRepository.findAll(PageRequest.of(pageNo, pageSize));
+    public PostResponse getAllPosts(int pageNo, int pageSize, String sortBy) {
+        Page<Post> posts = postRepository.findAll(PageRequest.of(pageNo, pageSize, Sort.by(sortBy)));
 
         // Get content for page object
         List<Post> listOfPosts = posts.getContent();
