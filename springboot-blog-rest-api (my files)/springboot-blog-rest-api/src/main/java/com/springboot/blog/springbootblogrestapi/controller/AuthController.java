@@ -3,7 +3,6 @@ package com.springboot.blog.springbootblogrestapi.controller;
 import com.springboot.blog.springbootblogrestapi.payload.LoginDto;
 import com.springboot.blog.springbootblogrestapi.payload.RegisterDto;
 import com.springboot.blog.springbootblogrestapi.service.impl.AuthServiceImpl;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
